@@ -1,0 +1,10 @@
+E:\School2017.1\Prog\EleventyOne\EleventyOne\bin\Debug\EleventyOne.exe.config
+E:\School2017.1\Prog\EleventyOne\EleventyOne\bin\Debug\EleventyOne.exe
+E:\School2017.1\Prog\EleventyOne\EleventyOne\bin\Debug\EleventyOne.pdb
+E:\School2017.1\Prog\EleventyOne\EleventyOne\obj\Debug\EleventyOne.csprojResolveAssemblyReference.cache
+E:\School2017.1\Prog\EleventyOne\EleventyOne\obj\Debug\EleventyOne.Properties.Resources.resources
+E:\School2017.1\Prog\EleventyOne\EleventyOne\obj\Debug\EleventyOne.csproj.GenerateResource.Cache
+E:\School2017.1\Prog\EleventyOne\EleventyOne\obj\Debug\EleventyOne.exe
+E:\School2017.1\Prog\EleventyOne\EleventyOne\obj\Debug\EleventyOne.pdb
+E:\School2017.1\Prog\EleventyOne\EleventyOne\obj\Debug\EleventyOne.Form1.resources
+E:\School2017.1\Prog\EleventyOne\EleventyOne\obj\Debug\EleventyOne.frmMultiplayer.resources
