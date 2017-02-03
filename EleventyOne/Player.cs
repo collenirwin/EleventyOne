@@ -13,12 +13,15 @@ namespace EleventyOne {
         public int roundPoints { get; private set; }
         public int rolls { get; private set; }
 
+        public bool rollendOne { get; private set; }
+
         public Player(string name) {
             this.name = name;
 
             points = 0;
             roundPoints = 0;
             rolls = 0;
+            rollendOne = false;
         }
 
         /// <summary>
@@ -32,12 +35,12 @@ namespace EleventyOne {
 
             rolls++;
 
-            // calculate new score
+            // calculate new scores
             if (diceRoll != 1) { // rolled anything other than 1
                 roundPoints += diceRoll; // add to this round's points
             } else { // rolled a 1 -- bad luck
                 roundPoints = 1; // round points become 1
-                finishRound(); // round is over
+                rollendOne = true;
             }
 
             return diceRoll;
@@ -50,6 +53,7 @@ namespace EleventyOne {
             points += roundPoints;
             roundPoints = 0;
             rolls = 0;
+            rollendOne = false;
         }
 
         /// <summary>

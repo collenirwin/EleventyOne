@@ -84,13 +84,13 @@ namespace EleventyOne {
 
         public Difficulty difficulty { get; private set; }
 
-        private AIPlayer(Difficulty difficulty) : base("") {
+        public AIPlayer(Difficulty difficulty) : base("") {
 
             this.difficulty = difficulty;
 
             // generate a unique name
             while (true) {
-                string name = "[bot] " + _names[Game.dice.Next(_names.Count)];
+                string name = "[AI]" + _names[Game.dice.Next(_names.Count)];
 
                 if (!_namesInUse.Contains(name)) {
                     this.name = name;
@@ -104,13 +104,18 @@ namespace EleventyOne {
         /// </summary>
         public bool rollAgain() {
 
+            // always roll atleast once
+            if (rolls == 0) {
+                return true;
+            }
+
             bool willRoll = false;
 
             if (difficulty == Difficulty.idiot) {
                 willRoll = true; // always rolls
 
             } else if (difficulty == Difficulty.coward) {
-                if (rolls < 1) { // rolls once / round
+                if (rolls < 2) { // rolls twice / round
                     willRoll = true;
                 }
 

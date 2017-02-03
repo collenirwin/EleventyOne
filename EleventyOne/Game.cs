@@ -1,16 +1,147 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BoinBoxNS;
+using BoinMsgNS;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace EleventyOne {
-    public class Game {
+    public partial class Game : UserControl {
 
-        public static Random dice { get; private set; }
+        public static readonly Random dice = new Random();
+        public static bool gameRunning { get; private set; }
 
-        public Game() {
+        Color[] colors = {
+            Color.MediumSeaGreen,
+            Color.LightCoral,
+            Color.DodgerBlue,
+            Color.MediumSlateBlue,
+            Color.Tan
+        };
 
+        Label[] namePlates = new Label[5];
+
+        public Player[] players { get; private set; }
+        int currentPlayer = 0;
+
+        public Game(Player[] players) {
+            InitializeComponent();
+
+            if (players.Length < 2 || players.Length > 5) {
+                throw new ArgumentException("Must be between 2 and 5 players.");
+            }
+
+            gameRunning = true;
+
+            this.players = players;
+
+            // associate players with their respective nameplates
+            namePlates[0] = lblPlayer1;
+            namePlates[1] = lblPlayer2;
+            namePlates[2] = lblPlayer3;
+            namePlates[3] = lblPlayer4;
+            namePlates[4] = lblPlayer5;
+
+            for (int x = 0; x < players.Length; x++) {
+                namePlates[x].Text = "[0]" + players[x].name;
+                namePlates[x].Show();
+            }
+
+            // start the first player's entry in txtGame
+            append(Environment.NewLine + players[currentPlayer].name + ":", colors[currentPlayer]);
+        }
+
+        private void append(string text, Color color, bool scroll = false) {
+
+            // get end point (before we add text)
+            int start = txtGame.TextLength;
+
+            // add text
+            txtGame.AppendText(text);
+
+            // select and color text
+            txtGame.SelectionStart  = start;
+            txtGame.SelectionLength = text.Length;
+            txtGame.SelectionColor  = color;
+            txtGame.SelectionLength = 0;
+
+            // scroll to bottom
+            if (scroll) {
+                txtGame.SelectionStart = txtGame.TextLength;
+                txtGame.ScrollToCaret();
+            }
+        }
+
+        private void rollAndAppend() {
+            append(" " + players[currentPlayer].roll(), colors[currentPlayer]);
+        }
+
+        private void btnRoll_Click(object sender, EventArgs e) {
+            rollAndAppend();
+
+            if (players[currentPlayer].rollendOne) {
+                finishRound();
+            }
+        }
+
+        private void btnEndTurn_Click(object sender, EventArgs e) {
+            finishRound();
+        }
+
+        private void btnQuit_Click(object sender, EventArgs e) {
+            if (BoinMsg.show("Do you want to quit?", "Eleventy One", true) == DialogResult.OK) {
+                gameRunning = false;
+                this.Dispose();
+            }
+        }
+
+        private void finishRound() {
+            var player = players[currentPlayer];
+
+            // finish the current player's round and show the new score
+            players[currentPlayer].finishRound();
+            namePlates[currentPlayer].Text = string.Format("[{0}]{1}", player.points, player.name);
+
+            if (player.hasWon()) {
+                BoinMsg.show(player.name + " won the game!", "Eleventy One");
+                gameRunning = false;
+                this.Dispose();
+                return;
+            }
+
+            // next player's turn
+            currentPlayer++;
+            if (currentPlayer >= players.Length) {
+                currentPlayer = 0;
+            }
+
+            // new player
+            var nextPlayer = players[currentPlayer];
+
+            // start the player's entry in txtGame
+            append(Environment.NewLine + nextPlayer.name + ":", colors[currentPlayer], true);
+
+            if (nextPlayer.GetType() == typeof(AIPlayer)) {
+                btnRoll.Hide();
+                btnEndTurn.Hide();
+                tmrTurn.Start();
+
+            } else {
+                btnRoll.Show();
+                btnEndTurn.Show();
+            }
+        }
+
+        private void tmrTurn_Tick(object sender, EventArgs e) {
+            var ai = players[currentPlayer] as AIPlayer;
+
+            // if the AI will roll again
+            if (!ai.rollendOne && !ai.hasWon() && ai.rollAgain()) {
+                rollAndAppend();
+
+            } else {
+                tmrTurn.Stop();
+                finishRound();
+            }
         }
     }
 }

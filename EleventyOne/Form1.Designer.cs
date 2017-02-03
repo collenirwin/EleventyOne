@@ -23,72 +23,11 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.lblTitle = new EleventyOne.AALabel();
-            this.btnQuit = new BoinBoxNS.BoinBox();
-            this.btnMultiplayer = new BoinBoxNS.BoinBox();
             this.btnSinglePlayer = new BoinBoxNS.BoinBox();
+            this.btnMultiplayer = new BoinBoxNS.BoinBox();
+            this.btnQuit = new BoinBoxNS.BoinBox();
+            this.lblTitle = new EleventyOne.AALabel();
             this.SuspendLayout();
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Calibri", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(150, 9);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(284, 59);
-            this.lblTitle.TabIndex = 4;
-            this.lblTitle.Text = "Eleventy One";
-            // 
-            // btnQuit
-            // 
-            this.btnQuit.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnQuit.AntiAliased = false;
-            this.btnQuit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.btnQuit.BorderColor = System.Drawing.Color.Empty;
-            this.btnQuit.BorderSize = 0;
-            this.btnQuit.FakeDisabled = false;
-            this.btnQuit.FlatAppearance.BorderSize = 0;
-            this.btnQuit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.btnQuit.Location = new System.Drawing.Point(149, 200);
-            this.btnQuit.MouseDownBackColor = System.Drawing.Color.Empty;
-            this.btnQuit.MouseDownForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.btnQuit.MouseOverBackColor = System.Drawing.Color.Empty;
-            this.btnQuit.MouseOverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.btnQuit.Name = "btnQuit";
-            this.btnQuit.Size = new System.Drawing.Size(287, 39);
-            this.btnQuit.TabIndex = 3;
-            this.btnQuit.Text = "Quit";
-            this.btnQuit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuit.UseVisualStyleBackColor = false;
-            this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
-            // 
-            // btnMultiplayer
-            // 
-            this.btnMultiplayer.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnMultiplayer.AntiAliased = false;
-            this.btnMultiplayer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.btnMultiplayer.BorderColor = System.Drawing.Color.Empty;
-            this.btnMultiplayer.BorderSize = 0;
-            this.btnMultiplayer.FakeDisabled = false;
-            this.btnMultiplayer.FlatAppearance.BorderSize = 0;
-            this.btnMultiplayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMultiplayer.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMultiplayer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.btnMultiplayer.Location = new System.Drawing.Point(149, 145);
-            this.btnMultiplayer.MouseDownBackColor = System.Drawing.Color.Empty;
-            this.btnMultiplayer.MouseDownForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.btnMultiplayer.MouseOverBackColor = System.Drawing.Color.Empty;
-            this.btnMultiplayer.MouseOverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.btnMultiplayer.Name = "btnMultiplayer";
-            this.btnMultiplayer.Size = new System.Drawing.Size(287, 39);
-            this.btnMultiplayer.TabIndex = 1;
-            this.btnMultiplayer.Text = "Multiplayer";
-            this.btnMultiplayer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMultiplayer.UseVisualStyleBackColor = false;
-            this.btnMultiplayer.Click += new System.EventHandler(this.btnMultiplayer_Click);
             // 
             // btnSinglePlayer
             // 
@@ -115,6 +54,67 @@
             this.btnSinglePlayer.UseVisualStyleBackColor = false;
             this.btnSinglePlayer.Click += new System.EventHandler(this.btnSinglePlayer_Click);
             // 
+            // btnMultiplayer
+            // 
+            this.btnMultiplayer.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnMultiplayer.AntiAliased = false;
+            this.btnMultiplayer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.btnMultiplayer.BorderColor = System.Drawing.Color.Empty;
+            this.btnMultiplayer.BorderSize = 0;
+            this.btnMultiplayer.FakeDisabled = false;
+            this.btnMultiplayer.FlatAppearance.BorderSize = 0;
+            this.btnMultiplayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMultiplayer.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMultiplayer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnMultiplayer.Location = new System.Drawing.Point(149, 145);
+            this.btnMultiplayer.MouseDownBackColor = System.Drawing.Color.Empty;
+            this.btnMultiplayer.MouseDownForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnMultiplayer.MouseOverBackColor = System.Drawing.Color.Empty;
+            this.btnMultiplayer.MouseOverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnMultiplayer.Name = "btnMultiplayer";
+            this.btnMultiplayer.Size = new System.Drawing.Size(287, 39);
+            this.btnMultiplayer.TabIndex = 1;
+            this.btnMultiplayer.Text = "Multiplayer";
+            this.btnMultiplayer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMultiplayer.UseVisualStyleBackColor = false;
+            this.btnMultiplayer.Click += new System.EventHandler(this.btnMultiplayer_Click);
+            // 
+            // btnQuit
+            // 
+            this.btnQuit.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnQuit.AntiAliased = false;
+            this.btnQuit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.btnQuit.BorderColor = System.Drawing.Color.Empty;
+            this.btnQuit.BorderSize = 0;
+            this.btnQuit.FakeDisabled = false;
+            this.btnQuit.FlatAppearance.BorderSize = 0;
+            this.btnQuit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnQuit.Location = new System.Drawing.Point(149, 200);
+            this.btnQuit.MouseDownBackColor = System.Drawing.Color.Empty;
+            this.btnQuit.MouseDownForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnQuit.MouseOverBackColor = System.Drawing.Color.Empty;
+            this.btnQuit.MouseOverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnQuit.Name = "btnQuit";
+            this.btnQuit.Size = new System.Drawing.Size(287, 39);
+            this.btnQuit.TabIndex = 3;
+            this.btnQuit.Text = "Quit";
+            this.btnQuit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQuit.UseVisualStyleBackColor = false;
+            this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Calibri", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(150, 9);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(284, 59);
+            this.lblTitle.TabIndex = 4;
+            this.lblTitle.Text = "Eleventy One";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -129,6 +129,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Eleventy One";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,6 +141,7 @@
         private BoinBoxNS.BoinBox btnMultiplayer;
         private BoinBoxNS.BoinBox btnQuit;
         private AALabel lblTitle;
+
     }
 }
 
