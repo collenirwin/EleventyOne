@@ -28,7 +28,10 @@ namespace EleventyOne {
         }
 
         private void btnMultiplayer_Click(object sender, EventArgs e) {
+            var multiplayerSetup = new MultiplayerSetup(this);
 
+            switchToScreen(multiplayerSetup);
+            multiplayerSetup.txtPlayer1.Focus();
         }
 
         private void btnQuit_Click(object sender, EventArgs e) {

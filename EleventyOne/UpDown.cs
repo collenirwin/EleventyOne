@@ -2,11 +2,14 @@
 using System.Windows.Forms;
 
 namespace EleventyOne {
+
     public partial class UpDown : UserControl {
 
         private int _min   = 0;
         private int _max   = 10;
         private int _value = 0;
+
+        public event ValueChanged valueChanged;
 
         public int min {
             get { return _min; }
@@ -53,6 +56,10 @@ namespace EleventyOne {
                 }
 
                 txtValue.Text = _value.ToString();
+
+                if (valueChanged != null) {
+                    valueChanged(this, new ValueChangedEventArgs(_value));
+                }
             }
         }
 
@@ -79,6 +86,18 @@ namespace EleventyOne {
 
                 txtValue.Text = value.ToString();
             }
+        }
+    }
+
+    // ValueChanged event stuff below here
+
+    public delegate void ValueChanged(object sender, ValueChangedEventArgs e);
+
+    public class ValueChangedEventArgs : EventArgs {
+        public int value { get; private set; }
+
+        public ValueChangedEventArgs(int value) {
+            this.value = value;
         }
     }
 }

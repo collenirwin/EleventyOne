@@ -120,12 +120,13 @@ namespace EleventyOne {
             // start the player's entry in txtGame
             append(Environment.NewLine + nextPlayer.name + ":", colors[currentPlayer], true);
 
+            // if the next player is an AI
             if (nextPlayer.GetType() == typeof(AIPlayer)) {
                 btnRoll.Hide();
                 btnEndTurn.Hide();
-                tmrTurn.Start();
+                tmrTurn.Start(); // start AI timer
 
-            } else {
+            } else { // human player, show the buttons
                 btnRoll.Show();
                 btnEndTurn.Show();
             }
@@ -134,11 +135,11 @@ namespace EleventyOne {
         private void tmrTurn_Tick(object sender, EventArgs e) {
             var ai = players[currentPlayer] as AIPlayer;
 
-            // if the AI will roll again
+            // if the AI will roll again, roll again
             if (!ai.rollendOne && !ai.hasWon() && ai.rollAgain()) {
                 rollAndAppend();
 
-            } else {
+            } else { // stop the timer, finish the round
                 tmrTurn.Stop();
                 finishRound();
             }
