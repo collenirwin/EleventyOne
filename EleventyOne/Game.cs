@@ -46,8 +46,17 @@ namespace EleventyOne {
                 namePlates[x].Show();
             }
 
+            var player = players[currentPlayer];
+
             // start the first player's entry in txtGame
-            append(Environment.NewLine + players[currentPlayer].name + ":", colors[currentPlayer]);
+            append(player.name + ":", colors[currentPlayer]);
+
+            // highlight player's nameplate
+            namePlates[currentPlayer].BackColor = namePlates[currentPlayer].ForeColor;
+            namePlates[currentPlayer].ForeColor = Color.White;
+
+            // show the player's name in the turn label
+            lblTurn.Text = player.name + "'s turn";
         }
 
         private void append(string text, Color color, bool scroll = false) {
@@ -101,6 +110,10 @@ namespace EleventyOne {
             players[currentPlayer].finishRound();
             namePlates[currentPlayer].Text = string.Format("[{0}]{1}", player.points, player.name);
 
+            // get rid of player's nameplate highlight
+            namePlates[currentPlayer].ForeColor = namePlates[currentPlayer].BackColor;
+            namePlates[currentPlayer].BackColor = Color.White;
+
             if (player.hasWon()) {
                 BoinMsg.show(player.name + " won the game!", "Eleventy One");
                 gameRunning = false;
@@ -119,6 +132,16 @@ namespace EleventyOne {
 
             // start the player's entry in txtGame
             append(Environment.NewLine + nextPlayer.name + ":", colors[currentPlayer], true);
+
+            // highlight new player's nameplate
+            namePlates[currentPlayer].BackColor = namePlates[currentPlayer].ForeColor;
+            namePlates[currentPlayer].ForeColor = Color.White;
+
+            // show the new player's name in the turn label
+            lblTurn.Text = nextPlayer.name + "'s turn";
+
+            // set the turn label's color to the player's color
+            lblTurn.ForeColor = namePlates[currentPlayer].BackColor;
 
             // if the next player is an AI
             if (nextPlayer.GetType() == typeof(AIPlayer)) {

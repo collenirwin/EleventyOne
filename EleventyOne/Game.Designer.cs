@@ -31,7 +31,7 @@
             this.lblPlayer5 = new System.Windows.Forms.Label();
             this.lblPlayerTitle = new System.Windows.Forms.Label();
             this.txtGame = new System.Windows.Forms.RichTextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblTurn = new System.Windows.Forms.Label();
             this.tmrTurn = new System.Windows.Forms.Timer(this.components);
             this.btnQuit = new BoinBoxNS.BoinBox();
             this.btnEndTurn = new BoinBoxNS.BoinBox();
@@ -130,19 +130,19 @@
             this.txtGame.TabStop = false;
             this.txtGame.Text = "";
             // 
-            // label5
+            // lblTurn
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblTurn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.label5.Location = new System.Drawing.Point(96, 244);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(324, 30);
-            this.label5.TabIndex = 10;
-            this.label5.Tag = "\'s turn";
-            this.label5.Text = "Player1\'s turn";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblTurn.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTurn.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            this.lblTurn.Location = new System.Drawing.Point(96, 244);
+            this.lblTurn.Name = "lblTurn";
+            this.lblTurn.Size = new System.Drawing.Size(324, 30);
+            this.lblTurn.TabIndex = 10;
+            this.lblTurn.Tag = "\'s turn";
+            this.lblTurn.Text = "Player1\'s turn";
+            this.lblTurn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // tmrTurn
             // 
@@ -227,7 +227,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblTurn);
             this.Controls.Add(this.btnQuit);
             this.Controls.Add(this.btnEndTurn);
             this.Controls.Add(this.btnRoll);
@@ -258,7 +258,7 @@
         private BoinBoxNS.BoinBox btnRoll;
         private BoinBoxNS.BoinBox btnEndTurn;
         private BoinBoxNS.BoinBox btnQuit;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblTurn;
         private System.Windows.Forms.Timer tmrTurn;
     }
 }
