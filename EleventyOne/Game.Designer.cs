@@ -33,9 +33,11 @@
             this.txtGame = new System.Windows.Forms.RichTextBox();
             this.lblTurn = new System.Windows.Forms.Label();
             this.tmrTurn = new System.Windows.Forms.Timer(this.components);
-            this.btnQuit = new BoinBoxNS.BoinBox();
-            this.btnEndTurn = new BoinBoxNS.BoinBox();
+            this.pnlButtons = new System.Windows.Forms.Panel();
             this.btnRoll = new BoinBoxNS.BoinBox();
+            this.btnEndTurn = new BoinBoxNS.BoinBox();
+            this.btnQuit = new BoinBoxNS.BoinBox();
+            this.pnlButtons.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblPlayer1
@@ -43,7 +45,7 @@
             this.lblPlayer1.AutoEllipsis = true;
             this.lblPlayer1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlayer1.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.lblPlayer1.Location = new System.Drawing.Point(1, 41);
+            this.lblPlayer1.Location = new System.Drawing.Point(0, 41);
             this.lblPlayer1.Name = "lblPlayer1";
             this.lblPlayer1.Size = new System.Drawing.Size(164, 30);
             this.lblPlayer1.TabIndex = 0;
@@ -56,7 +58,7 @@
             this.lblPlayer2.AutoEllipsis = true;
             this.lblPlayer2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlayer2.ForeColor = System.Drawing.Color.LightCoral;
-            this.lblPlayer2.Location = new System.Drawing.Point(1, 71);
+            this.lblPlayer2.Location = new System.Drawing.Point(0, 71);
             this.lblPlayer2.Name = "lblPlayer2";
             this.lblPlayer2.Size = new System.Drawing.Size(164, 30);
             this.lblPlayer2.TabIndex = 1;
@@ -69,7 +71,7 @@
             this.lblPlayer3.AutoEllipsis = true;
             this.lblPlayer3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlayer3.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblPlayer3.Location = new System.Drawing.Point(1, 101);
+            this.lblPlayer3.Location = new System.Drawing.Point(0, 101);
             this.lblPlayer3.Name = "lblPlayer3";
             this.lblPlayer3.Size = new System.Drawing.Size(164, 30);
             this.lblPlayer3.TabIndex = 2;
@@ -82,7 +84,7 @@
             this.lblPlayer4.AutoEllipsis = true;
             this.lblPlayer4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlayer4.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.lblPlayer4.Location = new System.Drawing.Point(1, 131);
+            this.lblPlayer4.Location = new System.Drawing.Point(0, 131);
             this.lblPlayer4.Name = "lblPlayer4";
             this.lblPlayer4.Size = new System.Drawing.Size(164, 30);
             this.lblPlayer4.TabIndex = 3;
@@ -95,7 +97,7 @@
             this.lblPlayer5.AutoEllipsis = true;
             this.lblPlayer5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlayer5.ForeColor = System.Drawing.Color.Tan;
-            this.lblPlayer5.Location = new System.Drawing.Point(1, 161);
+            this.lblPlayer5.Location = new System.Drawing.Point(0, 161);
             this.lblPlayer5.Name = "lblPlayer5";
             this.lblPlayer5.Size = new System.Drawing.Size(164, 30);
             this.lblPlayer5.TabIndex = 4;
@@ -107,9 +109,9 @@
             // 
             this.lblPlayerTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.lblPlayerTitle.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlayerTitle.Location = new System.Drawing.Point(1, 1);
+            this.lblPlayerTitle.Location = new System.Drawing.Point(0, 0);
             this.lblPlayerTitle.Name = "lblPlayerTitle";
-            this.lblPlayerTitle.Size = new System.Drawing.Size(164, 30);
+            this.lblPlayerTitle.Size = new System.Drawing.Size(164, 31);
             this.lblPlayerTitle.TabIndex = 5;
             this.lblPlayerTitle.Text = "Players";
             this.lblPlayerTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -149,6 +151,62 @@
             this.tmrTurn.Interval = 500;
             this.tmrTurn.Tick += new System.EventHandler(this.tmrTurn_Tick);
             // 
+            // pnlButtons
+            // 
+            this.pnlButtons.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlButtons.Controls.Add(this.btnRoll);
+            this.pnlButtons.Controls.Add(this.btnEndTurn);
+            this.pnlButtons.Location = new System.Drawing.Point(424, 241);
+            this.pnlButtons.Name = "pnlButtons";
+            this.pnlButtons.Size = new System.Drawing.Size(200, 100);
+            this.pnlButtons.TabIndex = 11;
+            // 
+            // btnRoll
+            // 
+            this.btnRoll.AntiAliased = false;
+            this.btnRoll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.btnRoll.BorderColor = System.Drawing.Color.Empty;
+            this.btnRoll.BorderSize = 0;
+            this.btnRoll.FakeDisabled = false;
+            this.btnRoll.FlatAppearance.BorderSize = 0;
+            this.btnRoll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRoll.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRoll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnRoll.Location = new System.Drawing.Point(1, 1);
+            this.btnRoll.MouseDownBackColor = System.Drawing.Color.Empty;
+            this.btnRoll.MouseDownForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnRoll.MouseOverBackColor = System.Drawing.Color.Empty;
+            this.btnRoll.MouseOverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnRoll.Name = "btnRoll";
+            this.btnRoll.Size = new System.Drawing.Size(77, 39);
+            this.btnRoll.TabIndex = 0;
+            this.btnRoll.Text = "Roll";
+            this.btnRoll.UseVisualStyleBackColor = false;
+            this.btnRoll.Click += new System.EventHandler(this.btnRoll_Click);
+            // 
+            // btnEndTurn
+            // 
+            this.btnEndTurn.AntiAliased = false;
+            this.btnEndTurn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.btnEndTurn.BorderColor = System.Drawing.Color.Empty;
+            this.btnEndTurn.BorderSize = 0;
+            this.btnEndTurn.FakeDisabled = false;
+            this.btnEndTurn.FlatAppearance.BorderSize = 0;
+            this.btnEndTurn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEndTurn.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEndTurn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnEndTurn.Location = new System.Drawing.Point(84, 1);
+            this.btnEndTurn.MouseDownBackColor = System.Drawing.Color.Empty;
+            this.btnEndTurn.MouseDownForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnEndTurn.MouseOverBackColor = System.Drawing.Color.Empty;
+            this.btnEndTurn.MouseOverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnEndTurn.Name = "btnEndTurn";
+            this.btnEndTurn.Size = new System.Drawing.Size(77, 39);
+            this.btnEndTurn.TabIndex = 1;
+            this.btnEndTurn.Text = "End Turn";
+            this.btnEndTurn.UseVisualStyleBackColor = false;
+            this.btnEndTurn.Click += new System.EventHandler(this.btnEndTurn_Click);
+            // 
             // btnQuit
             // 
             this.btnQuit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -174,63 +232,14 @@
             this.btnQuit.UseVisualStyleBackColor = false;
             this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
             // 
-            // btnEndTurn
-            // 
-            this.btnEndTurn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEndTurn.AntiAliased = false;
-            this.btnEndTurn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.btnEndTurn.BorderColor = System.Drawing.Color.Empty;
-            this.btnEndTurn.BorderSize = 0;
-            this.btnEndTurn.FakeDisabled = false;
-            this.btnEndTurn.FlatAppearance.BorderSize = 0;
-            this.btnEndTurn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEndTurn.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEndTurn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.btnEndTurn.Location = new System.Drawing.Point(509, 241);
-            this.btnEndTurn.MouseDownBackColor = System.Drawing.Color.Empty;
-            this.btnEndTurn.MouseDownForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.btnEndTurn.MouseOverBackColor = System.Drawing.Color.Empty;
-            this.btnEndTurn.MouseOverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.btnEndTurn.Name = "btnEndTurn";
-            this.btnEndTurn.Size = new System.Drawing.Size(77, 39);
-            this.btnEndTurn.TabIndex = 1;
-            this.btnEndTurn.Text = "End Turn";
-            this.btnEndTurn.UseVisualStyleBackColor = false;
-            this.btnEndTurn.Click += new System.EventHandler(this.btnEndTurn_Click);
-            // 
-            // btnRoll
-            // 
-            this.btnRoll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRoll.AntiAliased = false;
-            this.btnRoll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.btnRoll.BorderColor = System.Drawing.Color.Empty;
-            this.btnRoll.BorderSize = 0;
-            this.btnRoll.FakeDisabled = false;
-            this.btnRoll.FlatAppearance.BorderSize = 0;
-            this.btnRoll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRoll.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRoll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.btnRoll.Location = new System.Drawing.Point(426, 241);
-            this.btnRoll.MouseDownBackColor = System.Drawing.Color.Empty;
-            this.btnRoll.MouseDownForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.btnRoll.MouseOverBackColor = System.Drawing.Color.Empty;
-            this.btnRoll.MouseOverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.btnRoll.Name = "btnRoll";
-            this.btnRoll.Size = new System.Drawing.Size(77, 39);
-            this.btnRoll.TabIndex = 0;
-            this.btnRoll.Text = "Roll";
-            this.btnRoll.UseVisualStyleBackColor = false;
-            this.btnRoll.Click += new System.EventHandler(this.btnRoll_Click);
-            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.pnlButtons);
             this.Controls.Add(this.lblTurn);
             this.Controls.Add(this.btnQuit);
-            this.Controls.Add(this.btnEndTurn);
-            this.Controls.Add(this.btnRoll);
             this.Controls.Add(this.txtGame);
             this.Controls.Add(this.lblPlayerTitle);
             this.Controls.Add(this.lblPlayer5);
@@ -242,6 +251,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Game";
             this.Size = new System.Drawing.Size(600, 300);
+            this.pnlButtons.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -260,5 +270,6 @@
         private BoinBoxNS.BoinBox btnQuit;
         private System.Windows.Forms.Label lblTurn;
         private System.Windows.Forms.Timer tmrTurn;
+        private System.Windows.Forms.Panel pnlButtons;
     }
 }

@@ -29,7 +29,7 @@ namespace EleventyOne {
 
             // players[0] is always the user
             string name = txtPlayerName.Text.Trim();
-            players[0] = new Player((name == "") ? "You" : name); // default player name to "You"
+            players[0] = new Player((name == "") ? "Player" : name); // default player name to Player
 
             if (radChecked == radRandom) {
                 

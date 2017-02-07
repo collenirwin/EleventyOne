@@ -48,8 +48,8 @@ namespace EleventyOne {
 
             var player = players[currentPlayer];
 
-            // start the first player's entry in txtGame
-            append(player.name + ":", colors[currentPlayer]);
+            // start the first player's entry in txtGame, bold
+            append(player.name + ":", colors[currentPlayer], true);
 
             // highlight player's nameplate
             namePlates[currentPlayer].BackColor = namePlates[currentPlayer].ForeColor;
@@ -59,7 +59,7 @@ namespace EleventyOne {
             lblTurn.Text = player.name + "'s turn";
         }
 
-        private void append(string text, Color color, bool scroll = false) {
+        private void append(string text, Color color, bool bold = false, bool scroll = false) {
 
             // get end point (before we add text)
             int start = txtGame.TextLength;
@@ -71,9 +71,15 @@ namespace EleventyOne {
             txtGame.SelectionStart  = start;
             txtGame.SelectionLength = text.Length;
             txtGame.SelectionColor  = color;
-            txtGame.SelectionLength = 0;
 
-            // scroll to bottom
+            // make it bold?
+            if (bold) {
+                txtGame.SelectionFont = new Font(txtGame.SelectionFont, FontStyle.Bold);
+            } else {
+                txtGame.SelectionFont = new Font(txtGame.SelectionFont, FontStyle.Regular);
+            }
+
+            // scroll to bottom?
             if (scroll) {
                 txtGame.SelectionStart = txtGame.TextLength;
                 txtGame.ScrollToCaret();
@@ -106,12 +112,18 @@ namespace EleventyOne {
         private void finishRound() {
             var player = players[currentPlayer];
 
-            // finish the current player's round and show the new score
-            players[currentPlayer].finishRound();
+            // calculate how many points the player accumulated this round
+            int scoreDiff = player.points;
+            player.finishRound();
+            scoreDiff = player.points - scoreDiff;
+
+            append(" Total: " + scoreDiff, colors[currentPlayer], true);
+
+            // update player's nameplate with new score
             namePlates[currentPlayer].Text = string.Format("[{0}]{1}", player.points, player.name);
 
             // get rid of player's nameplate highlight
-            namePlates[currentPlayer].ForeColor = namePlates[currentPlayer].BackColor;
+            namePlates[currentPlayer].ForeColor = colors[currentPlayer];
             namePlates[currentPlayer].BackColor = Color.White;
 
             if (player.hasWon()) {
@@ -130,18 +142,18 @@ namespace EleventyOne {
             // new player
             var nextPlayer = players[currentPlayer];
 
-            // start the player's entry in txtGame
-            append(Environment.NewLine + nextPlayer.name + ":", colors[currentPlayer], true);
+            // start the player's entry in txtGame, bold
+            append(Environment.NewLine + nextPlayer.name + ":", colors[currentPlayer], true, true);
 
             // highlight new player's nameplate
-            namePlates[currentPlayer].BackColor = namePlates[currentPlayer].ForeColor;
+            namePlates[currentPlayer].BackColor = colors[currentPlayer];
             namePlates[currentPlayer].ForeColor = Color.White;
 
             // show the new player's name in the turn label
             lblTurn.Text = nextPlayer.name + "'s turn";
 
             // set the turn label's color to the player's color
-            lblTurn.ForeColor = namePlates[currentPlayer].BackColor;
+            lblTurn.ForeColor = colors[currentPlayer];
 
             // if the next player is an AI
             if (nextPlayer.GetType() == typeof(AIPlayer)) {
