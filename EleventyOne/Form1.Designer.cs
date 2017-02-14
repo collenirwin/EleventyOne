@@ -27,6 +27,7 @@
             this.btnMultiplayer = new BoinBoxNS.BoinBox();
             this.btnQuit = new BoinBoxNS.BoinBox();
             this.lblTitle = new EleventyOne.AALabel();
+            this.btnRules = new BoinBoxNS.BoinBox();
             this.SuspendLayout();
             // 
             // btnSinglePlayer
@@ -91,7 +92,7 @@
             this.btnQuit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.btnQuit.Location = new System.Drawing.Point(149, 200);
+            this.btnQuit.Location = new System.Drawing.Point(149, 255);
             this.btnQuit.MouseDownBackColor = System.Drawing.Color.Empty;
             this.btnQuit.MouseDownForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.btnQuit.MouseOverBackColor = System.Drawing.Color.Empty;
@@ -115,12 +116,38 @@
             this.lblTitle.TabIndex = 4;
             this.lblTitle.Text = "Eleventy One";
             // 
+            // btnRules
+            // 
+            this.btnRules.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnRules.AntiAliased = false;
+            this.btnRules.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.btnRules.BorderColor = System.Drawing.Color.Empty;
+            this.btnRules.BorderSize = 0;
+            this.btnRules.FakeDisabled = false;
+            this.btnRules.FlatAppearance.BorderSize = 0;
+            this.btnRules.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRules.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRules.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnRules.Location = new System.Drawing.Point(149, 200);
+            this.btnRules.MouseDownBackColor = System.Drawing.Color.Empty;
+            this.btnRules.MouseDownForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnRules.MouseOverBackColor = System.Drawing.Color.Empty;
+            this.btnRules.MouseOverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.btnRules.Name = "btnRules";
+            this.btnRules.Size = new System.Drawing.Size(287, 39);
+            this.btnRules.TabIndex = 2;
+            this.btnRules.Text = "How To Play";
+            this.btnRules.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRules.UseVisualStyleBackColor = false;
+            this.btnRules.Click += new System.EventHandler(this.btnRules_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(584, 312);
+            this.Controls.Add(this.btnRules);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnQuit);
             this.Controls.Add(this.btnMultiplayer);
@@ -141,6 +168,7 @@
         private BoinBoxNS.BoinBox btnMultiplayer;
         private BoinBoxNS.BoinBox btnQuit;
         private AALabel lblTitle;
+        private BoinBoxNS.BoinBox btnRules;
 
     }
 }

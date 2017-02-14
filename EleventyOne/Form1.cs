@@ -34,6 +34,10 @@ namespace EleventyOne {
             multiplayerSetup.txtPlayer1.Focus();
         }
 
+        private void btnRules_Click(object sender, EventArgs e) {
+            switchToScreen(new HowToPlay());
+        }
+
         private void btnQuit_Click(object sender, EventArgs e) {
             this.Close();
         }

@@ -25,3 +25,4 @@ E:\School2017.1\Prog\EleventyOne\EleventyOne\obj\Debug\BoinMsgNS.Form1.resources
 E:\School2017.1\Prog\EleventyOne\EleventyOne\obj\Debug\EleventyOne.MultiplayerSetup.resources
 E:\School2017.1\Prog\EleventyOne\EleventyOne\obj\Debug\EleventyOne.Game.resources
 E:\School2017.1\Prog\EleventyOne\EleventyOne\obj\Debug\EleventyOne.UpDown.resources
+E:\School2017.1\Prog\EleventyOne\EleventyOne\obj\Debug\EleventyOne.HowToPlay.resources
