@@ -1,2 +1,2 @@
 # EleventyOne
-WIP - Game of EleventyOne or 111
+Game of EleventyOne or 111
